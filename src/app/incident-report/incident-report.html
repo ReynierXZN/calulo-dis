@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>Incident Report</h2>
+
+  <form class="form-card" (ngSubmit)="save()">
+
+    <div class="form-row">
+      <label>Date</label>
+      <input type="date" [(ngModel)]="form.date" name="date">
+    </div>
+
+    <div class="form-row">
+      <label>Location</label>
+      <input type="text" [(ngModel)]="form.location" name="location" placeholder="Enter location">
+    </div>
+
+    <div class="form-row">
+      <label>Incident Type</label>
+      <input type="text" [(ngModel)]="form.incidentType" name="incidentType" placeholder="Type of incident">
+    </div>
+
+    <div class="form-row">
+      <label>Damage Level</label>
+      <select [(ngModel)]="form.damageLevel" name="damageLevel">
+        <option>Low</option>
+        <option>Moderate</option>
+        <option>High</option>
+        <option>Critical</option>
+      </select>
+    </div>
+
+    <button class="btn primary" type="submit">
+      {{ editId ? 'Update Report' : 'Add Report' }}
+    </button>
+  </form>
+
+  <hr>
+
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Damage Level</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let r of records">
+        <td>{{ r.date }}</td>
+        <td>{{ r.location }}</td>
+        <td>{{ r.incidentType }}</td>
+        <td>{{ r.damageLevel }}</td>
+        <td>
+          <button class="btn small" (click)="edit(r)">Edit</button>
+          <button class="btn danger small" (click)="remove(r.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

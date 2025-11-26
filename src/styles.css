@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================
+   GLOBAL THEME COLORS
+============================ */
+:root {
+  --primary: #007bff;
+  --primary-dark: #005fcc;
+  --secondary: #6c757d;
+  --success: #27ae60;
+  --danger: #e74c3c;
+  --danger-dark: #c0392b;
+
+  --background: #f5f7fa;
+  --text-dark: #333;
+  --text-light: #fff;
+
+  --card-bg: #ffffff;
+  --border: #dcdcdc;
+  --border-radius: 10px;
+}
+
+/* ============================
+   BODY & GLOBAL SETTINGS
+============================ */
+body {
+  background: var(--background);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+/* For all page containers (optional) */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ============================
+   INPUTS & SELECTS
+============================ */
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+  font-size: 15px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+}
+
+/* ============================
+   BUTTONS
+============================ */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.18s ease;
+}
+
+/* Primary Button */
+button.primary,
+.btn-primary {
+  background: var(--primary);
+  color: var(--text-light);
+}
+button.primary:hover,
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* Danger Button */
+button.danger,
+.btn-danger {
+  background: var(--danger);
+  color: var(--text-light);
+}
+button.danger:hover,
+.btn-danger:hover {
+  background: var(--danger-dark);
+}
+
+/* Secondary Button */
+button.secondary,
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--text-light);
+}
+button.secondary:hover,
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* Small button */
+.btn-small {
+  padding: 6px 10px;
+}
+
+/* ============================
+   TABLES
+============================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+table th {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 12px;
+  text-align: left;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+table tr:nth-child(even) {
+  background: #f3f6fa;
+}
+
+table tr:hover {
+  background: #e9f2ff;
+}
+
+/* ============================
+   CARD CONTAINER
+============================ */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+/* ============================
+   HEADERS
+============================ */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Optional: Page Title Alignment */
+h2 {
+  margin-bottom: 20px;
+}

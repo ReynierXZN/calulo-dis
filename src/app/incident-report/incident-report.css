@@ -1,0 +1,113 @@
+/* Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* Card-style form */
+.form-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+/* Form rows */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Inputs and selects */
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: #007bff;
+  color: white;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.btn.primary:hover {
+  background: #0065d1;
+}
+
+.btn.small {
+  padding: 6px 10px;
+  margin-right: 5px;
+}
+
+.btn.danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn.danger:hover {
+  background: #c0392b;
+}
+
+/* Table style */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.styled-table thead {
+  background: #007bff;
+  color: white;
+}
+
+.styled-table tr:nth-child(even) {
+  background: #f3f6fa;
+}
+
+.styled-table tr:hover {
+  background: #e9f2ff;
+}
