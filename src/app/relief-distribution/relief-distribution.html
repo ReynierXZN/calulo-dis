@@ -1,1 +1,55 @@
-<p>relief-distribution works!</p>
+<div class="container">
+  <h2>Relief Distribution</h2>
+
+  <div class="card">
+    <form (ngSubmit)="save()">
+
+      <label>Date</label>
+      <input type="date" [(ngModel)]="form.date" name="date">
+
+      <label>Barangay</label>
+      <input type="text" [(ngModel)]="form.barangay" name="barangay" placeholder="Barangay">
+
+      <label>Number of Families</label>
+      <input type="number" [(ngModel)]="form.numberOfFamilies" name="numberOfFamilies" placeholder="Number of Families">
+
+      <label>Relief Items</label>
+      <input type="text" [(ngModel)]="form.reliefItems" name="reliefItems" placeholder="Ex: Food Packs, Water">
+
+      <label>Distributed By</label>
+      <input type="text" [(ngModel)]="form.distributedBy" name="distributedBy" placeholder="Staff / Organization">
+
+      <button class="primary" type="submit">
+        {{ editId ? 'Update Distribution' : 'Add Distribution' }}
+      </button>
+
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Barangay</th>
+        <th>Families</th>
+        <th>Items</th>
+        <th>Distributed By</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let r of records">
+        <td>{{ r.date }}</td>
+        <td>{{ r.barangay }}</td>
+        <td>{{ r.numberOfFamilies }}</td>
+        <td>{{ r.reliefItems }}</td>
+        <td>{{ r.distributedBy }}</td>
+        <td>
+          <button class="secondary btn-small" (click)="edit(r)">Edit</button>
+          <button class="danger btn-small" (click)="remove(r.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

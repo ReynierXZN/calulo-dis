@@ -1,1 +1,60 @@
-<p>evacuation-center works!</p>
+<div class="container">
+  <h2>Evacuation Center Status</h2>
+
+  <div class="card">
+    <form (ngSubmit)="save()">
+
+      <label>Center Name</label>
+      <input type="text" [(ngModel)]="form.centerName" name="centerName" placeholder="Center Name">
+
+      <label>Barangay</label>
+      <input type="text" [(ngModel)]="form.barangay" name="barangay" placeholder="Barangay">
+
+      <label>Capacity</label>
+      <input type="number" [(ngModel)]="form.capacity" name="capacity" placeholder="Max Capacity">
+
+      <label>Current Population</label>
+      <input type="number" [(ngModel)]="form.currentPopulation" name="currentPopulation" placeholder="Current Occupants">
+
+      <label>Status</label>
+      <select [(ngModel)]="form.status" name="status">
+        <option>Open</option>
+        <option>Closed</option>
+        <option>Full</option>
+        <option>Under Maintenance</option>
+      </select>
+
+      <button class="primary" type="submit">
+        {{ editId ? 'Update Center' : 'Add Center' }}
+      </button>
+
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Center</th>
+        <th>Barangay</th>
+        <th>Capacity</th>
+        <th>Current Pop</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let r of records">
+        <td>{{ r.centerName }}</td>
+        <td>{{ r.barangay }}</td>
+        <td>{{ r.capacity }}</td>
+        <td>{{ r.currentPopulation }}</td>
+        <td>{{ r.status }}</td>
+        <td>
+          <button class="secondary btn-small" (click)="edit(r)">Edit</button>
+          <button class="danger btn-small" (click)="remove(r.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
